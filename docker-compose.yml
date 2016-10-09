@@ -1,0 +1,9 @@
+version: "2"
+services: 
+  app:
+    build: .
+    image: fatore/angular-quickstart
+    ports:
+      - 3030:3000
+    volumes:
+      - ./app:/src/app
