@@ -2,12 +2,10 @@ FROM mhart/alpine-node:6
 
 WORKDIR /src
 
-ADD ./package.json .
+COPY . .
 
-# If you need npm, don't use a base tag
 RUN npm install
-
-ADD . .
+RUN npm run typings install
 
 EXPOSE 3000
 CMD ["npm", "start"]
