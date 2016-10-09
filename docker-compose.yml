@@ -2,7 +2,7 @@ version: "2"
 services: 
   app:
     build: .
-    image: fatore/angular-quickstart
+    image: fatore/angular-tour-of-heroes
     ports:
       - 3030:3000
     volumes:
