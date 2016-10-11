@@ -4,8 +4,9 @@ import {HeroService} from './hero.service';
 import {Router} from '@angular/router';
 
 @Component({
+  moduleId: module.id,
   selector:'my-dashboard',
-  templateUrl: 'app/dashboard.component.html'
+  templateUrl: 'dashboard.component.html'
 })
 
 export class DashboardComponent implements OnInit {

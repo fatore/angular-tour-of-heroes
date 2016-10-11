@@ -4,8 +4,9 @@ import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-hero-detail',
-  templateUrl: 'app/hero-detail.component.html'
+  templateUrl: 'hero-detail.component.html'
 })
 
 export class HeroDetailComponent implements OnInit {
