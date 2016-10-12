@@ -1,4 +1,6 @@
 node_modules/
 typings/
+.vscode
+aot/
 app/**/*.js
 app/**/*.js.map
