@@ -18,12 +18,19 @@ export class HeroService {
         .then(response =>
           response.json().data as Hero[])
         .catch(this.handleError);
-
   }
 
   getHero(id: number): Promise<Hero> {
     return this.getHeroes().then(heroes =>
         heroes.find(hero => hero.id === id));
+  }
+
+  create(name: string): Promise<Hero> {
+    return this.http
+        .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+        .toPromise()
+        .then(res => res.json().data)
+        .catch(this.handleError);
   }
 
   update(hero: Hero): Promise<Hero> {
@@ -35,11 +42,11 @@ export class HeroService {
         .catch(this.handleError);
   }
 
-  create(name: string): Promise<Hero> {
-    return this.http
-        .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+  delete(id: number): Promise<void> {
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.delete(url, {headers: this.headers})
         .toPromise()
-        .then(res => res.json().data)
+        .then(() => null)
         .catch(this.handleError);
   }
 
